@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.7.RELEASE</version>
+        <version>${spring-boot.version}</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xuegao</groupId>
@@ -15,14 +15,10 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
+        <spring-boot.version>2.1.18.RELEASE</spring-boot.version>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -36,21 +32,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.6</version>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>com.xuegao.framework</groupId>
-            <artifactId>framework-jdbc</artifactId>
-            <version>1.3.7.RELEASE</version>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.3.0</version>
+            <version>3.12.0</version>
             <optional>true</optional>
         </dependency>
 
@@ -60,6 +42,14 @@
             <scope>test</scope>
             <optional>true</optional>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -67,29 +57,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>nexus-releases</id>
-            <name>Team Nexus Release Repository</name>
-            <url>http://nexus.ms.com:8081/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>Team Nexus Snapshot Repository</name>
-            <url>http://nexus.ms.com:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>nexus-public</id>
-            <name>Nexus public Repository</name>
-            <url>http://nexus.ms.com:8081/repository/maven-public</url>
-        </repository>
-    </repositories>
 
 </project>
